@@ -80,7 +80,7 @@ class WorkspaceView extends View
   initialize: (@model) ->
     @model = atom.workspace ? new Workspace unless @model?
 
-    panes = new PaneContainerView(@model.paneContainer)
+    panes = @model.getView(@model.paneContainer).__spacePenView
     @panes.replaceWith(panes)
     @panes = panes
 
